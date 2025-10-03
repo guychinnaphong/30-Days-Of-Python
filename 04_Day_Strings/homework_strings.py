@@ -102,10 +102,24 @@ Y = Z + '\n' + X
 #Asabeneh  250     Finland   Helsinki
 question_1 = ['name', 'age', 'country', 'city']
 question_2 = ['asabeneh', '250', 'finland', 'helsinki']
-questions = list(zip(question_1, question_2))
-print(questions)
-storage1 = len(questions[0][0]),  len(questions[0][1])
-print(storage1)
-storage2 = questions[1]
-storage3 = questions[2]
-storage4 = questions[3]
+
+# 1. Calculate the maximum width needed for each column
+column_widths = [max(len(q1), len(q2)) for q1, q2 in zip(question_1, question_2)]
+
+# 2. Build each line by padding words to the column width
+# .ljust(width) adds spaces to the right of a string to make it a certain width
+question_1x = '  '.join([word.ljust(width) for word, width in zip(question_1, column_widths)])
+question_2x = '  '.join([word.ljust(width) for word, width in zip(question_2, column_widths)])
+
+# 3. Print the final, aligned result
+print(question_1x)
+print(question_2x)
+
+
+
+
+#I GIVE UP SO THIS IS AI gemini 2.5 pro
+
+
+
+
