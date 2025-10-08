@@ -25,3 +25,7 @@ type = ['first name', 'last name', 'gender', 'age', 'martial status', 'skill', '
 detail = ['chinnaphong', 'roikaew', 'man', '16', 'single', 'none', 'thailand', 'bangkok', 'bangmod']
 for i, a in enumerate(type):
   student[a] = detail[i]
+
+student_len = len(student)
+print(student_len)
+
