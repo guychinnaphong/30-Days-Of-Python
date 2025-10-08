@@ -28,4 +28,3 @@ for i, a in enumerate(type):
 
 student_len = len(student)
 print(student_len)
-
