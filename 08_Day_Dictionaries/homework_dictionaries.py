@@ -28,3 +28,12 @@ for i, a in enumerate(type):
 
 student_len = len(student)
 print(student_len)
+skill = [student.get('skill')]
+print(type(skill))
+
+print(skill)
+print(len(skill))
+skill.extend(['cheering', 'learning'])
+student.popitem()
+del student['skill']
+print(student)
