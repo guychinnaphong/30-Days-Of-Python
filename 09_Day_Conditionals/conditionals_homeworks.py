@@ -37,3 +37,8 @@ if student_scores > 80:
   print('your grade: A')
 if student_scores < 0:
   print('nigga stop stimming')
+
+autumn = ['september', 'october', 'november']
+winter = ['december', 'january', 'february']
+spring = ['march', 'april', 'may']
+summer = ['june', 'july', 'august']
