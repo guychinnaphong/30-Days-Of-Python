@@ -2989,4 +2989,30 @@ for country in data:
     else:
       language_count[lang] = 1
 
-max(language_count.values())
+most_spoken = max(language_count, key=language_count.get)
+print(most_spoken, language_count[most_spoken])
+
+
+
+# หรือ
+
+
+
+
+
+
+
+
+population_count = {}
+for country in data:
+    population_count[country['name']] = country['population']
+most_pop_country = {}
+for i in range(11):
+  for number in population_count:
+    if i == max(population_count[number]):
+      most_pop_country[population_count
+    
+    else:
+      continue
+
+
