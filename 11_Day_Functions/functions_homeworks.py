@@ -156,3 +156,141 @@ def capitalize_list_item(input_list):
 capitalize_list_item(test1)
 
 
+
+def add_item(input_list, input_item):
+  if isinstance(input_list, list):
+    input_list.append(input_item)
+    return input_list
+  print('error, type of input is not list')
+  return None
+
+
+def remove_item(input_list, remove_item):
+  if isinstance(input_list, list) and remove_item in input_list:
+    input_list.remove(remove_item)
+    return input_list
+  elif remove_item not in input_list and isinstance(input_list, list) == True:
+    print('input_removed item is not in the list')
+    return None
+  elif isinstance(input_list, list) != True and remove_item in input_list:
+    print('error input type is not list')
+    return None
+  else:
+    print('nigga what are you stimming')
+    return None
+
+
+
+def sum_of_numbers(input_range = 0):
+  if type(input_range) != int:
+    return 'nigga enter your fucking integer and not anything else'
+  elif type(input_range) == int:
+    int_list = []
+    for i in range(input_range + 1):
+      int_list.append(i)
+    return f'sum of all number in range of {input_range} is {sum(int_list)}.'
+
+
+
+def sum_of_odds(input_range = 0):
+  if type(input_range) != int:
+    return 'nigga enter your fucking integer and not anything else'
+  elif type(input_range) == int:
+    odd_list = []
+    for i in range(input_range + 1):
+      if i % 2 == 1:
+        odd_list.append(i)
+      else:
+        odd_list.append(0)
+    return f'sum of all odds number in range of {input_range} is {sum(odd_list)}.'
+
+
+
+
+def sum_of_even(input_range = 0):
+  if type(input_range) != int:
+    return 'nigga enter your fucking integer and not anything else'
+  elif type(input_range) == int:
+    even_list = []
+    for i in range(input_range + 1):
+      if i % 2 == 0:
+        even_list.append(i)
+      else:
+        continue         #odd_list.append(0)
+    return f'sum of all odds number in range of {input_range} is {sum(even_list)}.'
+
+
+
+def evens_and_odds(positive_int):
+  if positive_int < 0:
+    return 'we dont accept negative integer, only positive.'
+  even_list = []
+  odd_list = []
+  for i in range(positive_int + 1):
+    if i % 2 == 0:
+      even_list.append(i)
+    elif i % 2 == 1:
+      odd_list.append(i)
+  return f'numbers of odds are {len(odd_list)}.\nnumber of evens are {len(even_list)}.'
+
+#หรือ 
+
+
+def evens_and_odds(n):
+    if n < 0:
+        return 'we dont accept negative integer, only positive.'
+    evens = (n // 2) + 1
+    odds = n // 2 + (n % 2)
+    return f'numbers of odds are {odds}. number of evens are {evens}.'
+
+
+
+def factorial(input_int):
+  factorial = 1
+  if type(input_int) != int:
+    return 'your input is not an integer'
+  elif type(input_int) == int and input_int < 0:
+    return 'function is not define (negative integer)'
+  elif type(input_int) == int and input_int > 0:
+    for i in range(1, input_int + 1):
+      factorial *= i
+  return factorial
+
+
+  #หรือ
+
+
+  def factorial_iterative(n):
+    if not isinstance(n, int) or n < 0:
+        raise ValueError("Input must be a non-negative integer.")
+    if n == 0:
+        return 1
+    
+    fact = 1
+    for i in range(1, n + 1):
+        fact *= i
+    return fact
+
+
+
+  
+
+  def is_empty(something):
+    if isinstance(something, (int, float, str, bool)):
+        raise ValueError("your input is undefined")              #AI because my brain cant handle for some reason
+
+    try:
+        return "EMPTY" if len(something) == 0 else "NOT EMPTY"
+    except TypeError:
+        raise TypeError("Unsupported type")
+
+
+
+
+def mean(input_list):
+  if not isinstance(input_list, list):
+    raise ValueError("your input is not a list")
+  elif isinstance(input_list, list):
+    for i in input_list:
+      return 'your input list is not all pure number' if not isinstance(input_list, (int, float)) else sum(input_list) / len(input_list)
+    mean_output = (sum
