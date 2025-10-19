@@ -7,4 +7,5 @@ list_of_lists =[[[1, 2, 3]], [[4, 5, 6]], [[7, 8, 9]]]
 flatten = [num for row1 in list_of_lists for row2 in row1 for num in row2]
 print(flatten)
 
-list = [
+list = [(n, *(n**k for k in range(7))) for n in range(11)]
+print(list)
