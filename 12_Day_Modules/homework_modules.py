@@ -192,3 +192,9 @@ def shuffle_list(input_list):
 print(shuffle_list([1, 2, 3, 4, 5]))
 
 
+from random import randint
+#num = (int(i) for i in list(string.digits))
+num = list(int(i) for i in string.digits)
+def return_num():
+  num_use = num[:]
+  
