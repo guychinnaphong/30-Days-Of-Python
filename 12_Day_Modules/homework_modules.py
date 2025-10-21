@@ -192,9 +192,21 @@ def shuffle_list(input_list):
 print(shuffle_list([1, 2, 3, 4, 5]))
 
 
-from random import randint
+#from random import randint
 #num = (int(i) for i in list(string.digits))
-num = list(int(i) for i in string.digits)
-def return_num():
-  num_use = num[:]
+#num = list(int(i) for i in string.digits)
+#def return_num():
+  #num_use = num[:]
   
+import random
+def unique_num():
+  return random.sample(range(10), 7)
+
+# หรือ 
+
+import random
+def unique_num():
+  test = set()
+  while len(test) < 7:
+    test.add(random.randint(0, 9))
+  return list(test)
