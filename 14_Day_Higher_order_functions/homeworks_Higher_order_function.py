@@ -50,6 +50,7 @@ python decorators is mix of both but is being use to extend other function"""
 countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
 names = ['Asabeneh', 'Lidiya', 'Ermias', 'Abraham']
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+from functools import reduce
 
 def call_upper(funct):
   return funct.upper()
@@ -68,7 +69,7 @@ print(make_list_minus)
 
 
 countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
-for i country in countries:
+for country in countries:
   print(country)
 
 names = ['Asabeneh', 'Lidiya', 'Ermias', 'Abraham']
@@ -106,3 +107,7 @@ print(list(upper_names))
 
 land_filter = filter(lambda country: 'land' in country, countries)
 print(list(land_filter))
+
+
+six_filter = filter(lambda country: len(country) != 6, countries)
+print(list(six_filter))
