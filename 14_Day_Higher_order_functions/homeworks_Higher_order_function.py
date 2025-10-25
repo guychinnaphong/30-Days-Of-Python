@@ -105,9 +105,254 @@ print(list(squared_numbers))
 upper_names = map(call_upper, names)
 print(list(upper_names))
 
-land_filter = filter(lambda country: 'land' in country, countries)
+land_filter = filter(lambda country: 'land' not in country, countries)
 print(list(land_filter))
 
 
 six_filter = filter(lambda country: len(country) != 6, countries)
 print(list(six_filter))
+
+six_more_filter = filter(lambda country: len(country) < 6, countries)
+print(list(six_more_filter))
+
+E_filter = filter(lambda country: not country.startswith('E'), countries)
+print(list(E_filter))
+
+mapped = list(map(lambda mapped_country: mapped_country.upper(), countries))
+print(mapped)
+filtered = list(filter(lambda filtered_country: 'A' in filtered_country, mapped))
+print(filtered)
+reduced = reduce(lambda a, b: a + ' ' + b, filtered)
+print(reduced)
+
+
+
+
+def get_string_lists(input_list):
+    if isinstance(input_list, list):
+        output_list = list(map(lambda input_element: str(input_element), input_list))
+        return output_list
+    return None
+
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+sum_of_num_list = reduce(lambda a, b: a + b, numbers)
+print(sum_of_num_list)
+
+
+countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
+# Estonia, Finland, Sweden, Denmark, Norway, and Iceland are north European countries
+sentence = reduce(lambda a, b: f'{a}, {b}', countries[:-1])
+sentence = f'{sentence} and {countries[-1]} are north European countries'
+print(sentence)
+
+
+countries = [
+  'Afghanistan',
+  'Albania',
+  'Algeria',
+  'Andorra',
+  'Angola',
+  'Antigua and Barbuda',
+  'Argentina',
+  'Armenia',
+  'Australia',
+  'Austria',
+  'Azerbaijan',
+  'Bahamas',
+  'Bahrain',
+  'Bangladesh',
+  'Barbados',
+  'Belarus',
+  'Belgium',
+  'Belize',
+  'Benin',
+  'Bhutan',
+  'Bolivia',
+  'Bosnia and Herzegovina',
+  'Botswana',
+  'Brazil',
+  'Brunei',
+  'Bulgaria',
+  'Burkina Faso',
+  'Burundi',
+  'Cambodia',
+  'Cameroon',
+  'Canada',
+  'Cape Verde',
+  'Central African Republic',
+  'Chad',
+  'Chile',
+  'China',
+  'Colombi',
+  'Comoros',
+  'Congo (Brazzaville)',
+  'Congo',
+  'Costa Rica',
+  "Cote d'Ivoire",
+  'Croatia',
+  'Cuba',
+  'Cyprus',
+  'Czech Republic',
+  'Denmark',
+  'Djibouti',
+  'Dominica',
+  'Dominican Republic',
+  'East Timor (Timor Timur)',
+  'Ecuador',
+  'Egypt',
+  'El Salvador',
+  'Equatorial Guinea',
+  'Eritrea',
+  'Estonia',
+  'Ethiopia',
+  'Fiji',
+  'Finland',
+  'France',
+  'Gabon',
+  'Gambia, The',
+  'Georgia',
+  'Germany',
+  'Ghana',
+  'Greece',
+  'Grenada',
+  'Guatemala',
+  'Guinea',
+  'Guinea-Bissau',
+  'Guyana',
+  'Haiti',
+  'Honduras',
+  'Hungary',
+  'Iceland',
+  'India',
+  'Indonesia',
+  'Iran',
+  'Iraq',
+  'Ireland',
+  'Israel',
+  'Italy',
+  'Jamaica',
+  'Japan',
+  'Jordan',
+  'Kazakhstan',
+  'Kenya',
+  'Kiribati',
+  'Korea, North',
+  'Korea, South',
+  'Kuwait',
+  'Kyrgyzstan',
+  'Laos',
+  'Latvia',
+  'Lebanon',
+  'Lesotho',
+  'Liberia',
+  'Libya',
+  'Liechtenstein',
+  'Lithuania',
+  'Luxembourg',
+  'Macedonia',
+  'Madagascar',
+  'Malawi',
+  'Malaysia',
+  'Maldives',
+  'Mali',
+  'Malta',
+  'Marshall Islands',
+  'Mauritania',
+  'Mauritius',
+  'Mexico',
+  'Micronesia',
+  'Moldova',
+  'Monaco',
+  'Mongolia',
+  'Morocco',
+  'Mozambique',
+  'Myanmar',
+  'Namibia',
+  'Nauru',
+  'Nepal',
+  'Netherlands',
+  'New Zealand',
+  'Nicaragua',
+  'Niger',
+  'Nigeria',
+  'Norway',
+  'Oman',
+  'Pakistan',
+  'Palau',
+  'Panama',
+  'Papua New Guinea',
+  'Paraguay',
+  'Peru',
+  'Philippines',
+  'Poland',
+  'Portugal',
+  'Qatar',
+  'Romania',
+  'Russia',
+  'Rwanda',
+  'Saint Kitts and Nevis',
+  'Saint Lucia',
+  'Saint Vincent',
+  'Samoa',
+  'San Marino',
+  'Sao Tome and Principe',
+  'Saudi Arabia',
+  'Senegal',
+  'Serbia and Montenegro',
+  'Seychelles',
+  'Sierra Leone',
+  'Singapore',
+  'Slovakia',
+  'Slovenia',
+  'Solomon Islands',
+  'Somalia',
+  'South Africa',
+  'Spain',
+  'Sri Lanka',
+  'Sudan',
+  'Suriname',
+  'Swaziland',
+  'Sweden',
+  'Switzerland',
+  'Syria',
+  'Taiwan',
+  'Tajikistan',
+  'Tanzania',
+  'Thailand',
+  'Togo',
+  'Tonga',
+  'Trinidad and Tobago',
+  'Tunisia',
+  'Turkey',
+  'Turkmenistan',
+  'Tuvalu',
+  'Uganda',
+  'Ukraine',
+  'United Arab Emirates',
+  'United Kingdom',
+  'United States',
+  'Uruguay',
+  'Uzbekistan',
+  'Vanuatu',
+  'Vatican City',
+  'Venezuela',
+  'Vietnam',
+  'Yemen',
+  'Zambia',
+  'Zimbabwe',
+]
+
+def categorize_countries():
+    return list(filter(lambda country: country.endswith(('land', 'stan', 'ia', 'Islands')), countries))
+    
+#def categorize_countries():
+   # return list(filter(lambda country: any(('land', 'stan', 'ia', 'Islands')) in country, countries))
+
+def categorize_countries():
+    substrings = ('land', 'stan', 'ia', 'Islands')
+    return list(filter(lambda country: any(sub in country for sub in substrings), countries))
+
+import string
+def dict_letter():
+    letters_list = string.ascii_letters[:(len(string.ascii_letters) / 2) + 1]
