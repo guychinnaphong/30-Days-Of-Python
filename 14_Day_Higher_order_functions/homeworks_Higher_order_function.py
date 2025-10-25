@@ -353,6 +353,28 @@ def categorize_countries():
     substrings = ('land', 'stan', 'ia', 'Islands')
     return list(filter(lambda country: any(sub in country for sub in substrings), countries))
 
+#import string
+#def dict_letter():
+   # letters_list = list(string.ascii_letters[:len(string.ascii_letters) // 2])
+   # letter_dict = dict.fromkeys(letters_list, 0)
+    #for letter in letters_list:
+       # for country in countries:
+           # if country.startswith(letter):
+               # print(letter, country)
+              # letter_dict[str(letter)] += 1
+          #  else:
+              #  letter_dict[letter] + 0
+   # return letter_dict
+
 import string
+
 def dict_letter():
-    letters_list = string.ascii_letters[:(len(string.ascii_letters) / 2) + 1]
+    letters_list = list(string.ascii_letters[:len(string.ascii_letters) // 2])
+    letter_dict = dict.fromkeys(letters_list, 0)
+
+    for country in countries:
+        first_letter = country[0]   # get the first character
+        if first_letter in letter_dict:
+            letter_dict[first_letter] += 1
+
+    return letter_dict
