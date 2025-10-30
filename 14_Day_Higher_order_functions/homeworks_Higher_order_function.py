@@ -3034,8 +3034,16 @@ countries = [
 
 
 
-from random import randint
+#from random import randint
 test_list = []
-test_list.extend((randint(100, 100000) for _ in range(8)))
-test = ['1', '2', '3', '4', '5', '7', '9', '10']
-final_list = dict(zip(test, test_list))
+for country in countries:
+    a, b, c = country["name"], country["capital"], country["population"]
+    test_list.append((a, b, c))
+print(test_list)
+#test_list.extend((randint(100, 100000) for _ in range(8)))
+#test = ['1', '2', '3', '4', '5', '7', '9', '10']
+#final_list = dict(zip(test, test_list))
+
+
+
+amount_of_spoke = []
